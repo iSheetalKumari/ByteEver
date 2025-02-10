@@ -1,15 +1,13 @@
-const Home = () => {
+const HomePage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-500 to-indigo-600 text-white flex flex-col items-center justify-center p-6">
-      <h1 className="text-5xl font-bold animate-fadeIn">Welcome to MySQL Workbench</h1>
-      <p className="mt-4 text-lg opacity-90">
-        Design, manage, and interact with your MySQL databases effortlessly.
-      </p>
-      <button className="mt-6 px-6 py-3 bg-white text-indigo-600 font-semibold rounded-xl shadow-lg hover:bg-indigo-100 transition duration-300">
-        Get Started
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+      <h1 className="text-4xl font-bold mb-4">Code, Compile & Share Instantly</h1>
+      <p className="text-lg text-gray-300">An online coding platform for developers.</p>
+      <button className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg">
+        Start Coding
       </button>
     </div>
   );
 };
 
-export default Home;
+export default HomePage;
