@@ -3,6 +3,17 @@ import MonacoEditor from "@monaco-editor/react";
 
 function Editor() {
   const [code, setCode] = useState("// Write your code here");
+  const [output, setOutput] = useState("");
+
+  // Function to execute JavaScript code
+  const runCode = () => {
+    try {
+      const result = eval(code); // Executes the code safely
+      setOutput(result !== undefined ? result.toString() : "No output");
+    } catch (error) {
+      setOutput("Error: " + error.message);
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-900 text-white">
@@ -24,14 +35,17 @@ function Editor() {
       </div>
 
       {/* Run Code Button */}
-      <button className="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition">
+      <button
+        onClick={runCode}
+        className="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition"
+      >
         Run Code
       </button>
 
       {/* Output Section */}
       <div className="mt-4 bg-gray-800 p-4 rounded-lg shadow-md w-full max-w-4xl">
         <h2 className="text-lg font-semibold">Output:</h2>
-        <p className="text-gray-300">Your output will appear here.</p>
+        <p className="text-gray-300 whitespace-pre-line">{output}</p>
       </div>
     </div>
   );
