@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="problems" element={<Problems />} />
-          <Route path="editor" element={<Editor />} />
+          <Route path="editor/:id" element={<Editor />} /> {/* ✅ Dynamic Route */}
         </Route>
       </Routes>
     </BrowserRouter>
